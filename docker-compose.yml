@@ -1,10 +1,11 @@
 version: "3.9"
 services:
   app:
-    build: ./infra/php
+    build: ./infra/php/
     volumes:
       - ./backend:/work
-      
+      - ./php/php.ini:/usr/local/etc/php/conf.d/php.ini
+
   web:
     image: nginx:1.20-alpine
     ports:
